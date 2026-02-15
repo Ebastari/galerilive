@@ -15,11 +15,11 @@ const Gallery: React.FC<GalleryProps> = ({ isOpen, onClose, data, onSelectTree, 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[3000] bg-slate-100/85 backdrop-blur-3xl flex flex-col p-6 md:p-12 animate-in fade-in zoom-in duration-300">
+    <div className="fixed inset-0 z-[3000] bg-slate-900/85 backdrop-blur-3xl flex flex-col p-6 md:p-12 animate-in fade-in zoom-in duration-300">
       <div className="flex justify-between items-center mb-8 max-w-7xl mx-auto w-full">
         <div>
-            <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">Katalog Visual Realisasi</h2>
-          <p className="text-blue-600 text-xs font-bold mt-1 tracking-[0.2em] uppercase">Sinkronisasi Database Visual: {data.length} Pohon</p>
+          <h2 className="text-3xl font-black text-white tracking-tighter uppercase">Katalog Visual Realisasi</h2>
+          <p className="text-blue-400 text-xs font-bold mt-1 tracking-[0.2em] uppercase">Sinkronisasi Database Visual: {data.length} Pohon</p>
         </div>
         <button 
           onClick={onClose}
@@ -37,17 +37,17 @@ const Gallery: React.FC<GalleryProps> = ({ isOpen, onClose, data, onSelectTree, 
             <div 
               key={tree["No Pohon"] + String(tree.X)}
               onClick={() => onSelectTree(tree)}
-              className="group relative aspect-[3/4] bg-slate-200 rounded-[2rem] overflow-hidden border border-white/5 cursor-pointer hover:border-blue-500/50 transition-all hover:shadow-2xl"
+              className="group relative aspect-[3/4] bg-slate-800 rounded-[2rem] overflow-hidden border border-white/5 cursor-pointer hover:border-blue-500/50 transition-all hover:shadow-2xl"
             >
               <img 
                 src={treeImageUrlExtractor(tree)} 
                 alt={tree.Tanaman}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-100 group-hover:opacity-100"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 loading="lazy"
                 onError={(e: any) => e.target.src = 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300'}
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
               
               <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-md px-2 py-1 rounded-lg border border-white/10">
                 <span className="text-white text-[8px] font-black uppercase">#${tree["No Pohon"]}</span>
